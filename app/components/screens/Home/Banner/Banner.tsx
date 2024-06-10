@@ -10,7 +10,7 @@ const Banner = () => {
     <View className='mt-5 w-full bg-[#47AA52] px-5 py-5 rounded-2xl justify-between flex-row'>
       <View>
         <Text className='font-medium w-56 text-white text-xl'>
-          Быстрая доставка - деликатесы каждый день!
+          Быстрая доставка - каждый день!
         </Text>
 
         <Pressable
@@ -23,7 +23,7 @@ const Banner = () => {
 
       <View className='absolute bottom-0 right-4 w-28 h-28'>
         <Image
-          source={{uri: 'https://play-lh.googleusercontent.com/uCx4DtIMmlPsMbXJwUZ0mZkNcp7CviB0P7RrmaquhOKWZry9-LlWcmiLQ4SkCP2B-pI'}}
+          source={{uri: 'https://raw.githubusercontent.com/Grigogo/delivery-app-expo-client/main/app/assets/images/banner.png'}}
           style={{width: 100, height: 100}}
         />
       </View>

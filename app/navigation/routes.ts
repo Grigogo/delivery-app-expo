@@ -6,6 +6,8 @@ import Search from "app/components/screens/Search/Search";
 import Explorer from "app/components/screens/Explorer/Explorer";
 import Profile from "app/components/screens/Profile/Profile";
 import Cart from "@/components/screens/Cart/Cart";
+import Category from "@/components/screens/Category/Category";
+import Product from "@/components/screens/Product/Product";
 
 export const routes: IRoute[] = [
   {
@@ -31,5 +33,13 @@ export const routes: IRoute[] = [
   {
     name: 'Cart',
     component: Cart
+  },
+  {
+    name: 'Category',
+    component: Category
+  },
+  {
+    name: 'Product',
+    component: Product
   }
 ]

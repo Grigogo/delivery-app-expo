@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import RnToast, { BaseToast } from 'react-native-toast-message'
+import RnToast, { BaseToast, BaseToastProps } from 'react-native-toast-message'
 
 const options = (primaryColor: string) => ({
   style: { backgroundColor: '#080808', borderLeftColor: primaryColor },
@@ -16,7 +16,6 @@ const Toast: FC = () => {
     <RnToast
       topOffset={50}
       config={{
-        success: props => <BaseToast {...props} {...options('#67E769')} />,
         info: props => <BaseToast  {...props} {...options{'#65d4ff'}} />,
         error: props => <BaseToast {...props} {...options{'#ff4949'}} />
       }}

@@ -1,47 +1,51 @@
 import {
-	NavigationContainer,
-	useNavigationContainerRef
-} from '@react-navigation/native'
-import { FC, useEffect, useState } from 'react'
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
+import { FC, useEffect, useState } from 'react';
 
-import PrivateNavigator from './PrivateNavigator'
-import { useAuth } from '@/hooks/useAuth'
-import { useCheckAuth } from '@/providers/auth/useCheckAuth'
-import BottomMenu from '@/components/layout/bottom-menu/BottomMenu'
+import BottomMenu from '@/components/layout/bottom-menu/BottomMenu';
+
+import { useAuth } from '@/hooks/useAuth';
+
+import { useCheckAuth } from '@/providers/auth/useCheckAuth';
+
+import PrivateNavigator from './PrivateNavigator';
+import React from 'react';
 
 const Navigation: FC = () => {
-	const { user } = useAuth()
+  const { user } = useAuth();
 
-	const [currentRoute, setCurrentRoute] = useState<string | undefined>(
-		undefined
-	)
+  const [currentRoute, setCurrentRoute] = useState<string | undefined>(
+    undefined,
+  );
 
-	const navRef = useNavigationContainerRef()
+  const navRef = useNavigationContainerRef();
 
-	useEffect(() => {
-		setCurrentRoute(navRef.getCurrentRoute()?.name)
+  useEffect(() => {
+    setCurrentRoute(navRef.getCurrentRoute()?.name);
 
-		const listener = navRef.addListener('state', () =>
-			setCurrentRoute(navRef.getCurrentRoute()?.name)
-		)
+    const listener = navRef.addListener('state', () =>
+      setCurrentRoute(navRef.getCurrentRoute()?.name),
+    );
 
-		return () => {
-			navRef.removeListener('state', listener)
-		}
-	}, [])
+    return () => {
+      navRef.removeListener('state', listener);
+    };
+  }, []);
 
-	useCheckAuth(currentRoute)
+  useCheckAuth(currentRoute);
 
-	return (
-		<>
-			<NavigationContainer ref={navRef}>
-				<PrivateNavigator />
-			</NavigationContainer>
-			{user && currentRoute && (
-				<BottomMenu nav={navRef.navigate} currentRoute={currentRoute} />
-			)}
-		</>
-	)
-}
+  return (
+    <>
+      <NavigationContainer ref={navRef}>
+        <PrivateNavigator />
+      </NavigationContainer>
+      {user && currentRoute && (
+        <BottomMenu nav={navRef.navigate} currentRoute={currentRoute} />
+      )}
+    </>
+  );
+};
 
-export default Navigation
+export default Navigation;

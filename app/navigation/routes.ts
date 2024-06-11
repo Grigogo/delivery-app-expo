@@ -8,6 +8,7 @@ import Profile from "app/components/screens/Profile/Profile";
 import Cart from "@/components/screens/Cart/Cart";
 import Category from "@/components/screens/Category/Category";
 import Product from "@/components/screens/Product/Product";
+import Thanks from "@/components/screens/Thanks/Thanks";
 
 export const routes: IRoute[] = [
   {
@@ -41,5 +42,9 @@ export const routes: IRoute[] = [
   {
     name: 'Product',
     component: Product
+  },
+  {
+    name: 'Thanks',
+    component: Thanks
   }
 ]

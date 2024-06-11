@@ -21,7 +21,7 @@ const Product = () => {
         <Image source={getMediaSource(product.image)} width={260} height={260} />
       </View>
       <ProductInfo product={product} />
-      <AddToCardButton productId={product.id} />
+      <AddToCardButton product={product} />
     </Layout>
   )
 }
